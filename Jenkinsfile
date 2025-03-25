@@ -1,6 +1,6 @@
 @Library('Shared') _
 pipeline {
-    agent {label 'project'}
+    agent any
     
     environment{
         SONAR_HOME = tool "Sonar"
@@ -67,32 +67,7 @@ pipeline {
                     sonarqube_code_quality()
                 }
             }
-        }
-        
-        stage('Exporting environment variables') {
-            parallel{
-                stage("Backend env setup"){
-                    steps {
-                        script{
-                            dir("Automations"){
-                                sh "bash updatebackendnew.sh"
-                            }
-                        }
-                    }
-                }
-                
-                stage("Frontend env setup"){
-                    steps {
-                        script{
-                            dir("Automations"){
-                                sh "bash updatefrontendnew.sh"
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        
+        } 
         stage("Docker: Build Images"){
             steps{
                 script{
