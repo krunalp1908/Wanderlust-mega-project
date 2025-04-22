@@ -57,7 +57,7 @@ WanderLust is a simple MERN travel blog website ✈ This project is aimed to hel
 #
 
 > [!Note]
-> This project will be implemented on United States(Ohio) region (us-west-1).
+> This project will be implemented on United States(Ohio) region (us-west-2).
 
 - <b>Create 1 Master machine on AWS with 2CPU, 8GB of RAM (t2.large) and 29 GB of storage and install Docker on it.</b>
 #
